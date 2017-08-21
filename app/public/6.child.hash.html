@@ -1,0 +1,19 @@
+<html>
+<head>
+
+</head>
+<body>
+<script type="text/javascript">
+var xhr=new XMLHttpRequest();
+xhr.onreadystatechange=function(){
+	if (xhr.readyState==4&&xhr.status==200) {
+		var res=JSON.parse(xhr.responseText);
+		parent.location.href = `http://y.stuq.com:7001/public/6.parent.hash.html#msg=${res.msg}`;
+	}
+};
+
+xhr.open('GET','http://x.stuq.com:7001/json',true)
+xhr.send(null);
+</script>
+</body>
+</html>
